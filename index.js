@@ -6,7 +6,11 @@ const app = express();
 
 app.use(cors());
 
-app.post("/api/gemini", async (req, res) => {
+app.get("/", (req, res) => {
+  return res.json({"status": "berhasil"})
+})
+
+app.post("/gemini", async (req, res) => {
   const { prompt } = req.query;
   //console.log(prompt)
   return res.json({
@@ -19,6 +23,6 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
-app.listen(8080, () => {
-  console.log("server is running on port 8080");
+app.listen(3000, () => {
+  console.log("server is running on port 3000");
 });
