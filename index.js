@@ -1,13 +1,12 @@
 import express from "express";
 import cors from "cors";
 import gemini from "./GemiBot.js";
-import { getCompanyList, getNumberOfModels } from "./data.js "
 
 const app = express();
 
 app.use(cors());
 
-app.post("/gemini", async (req, res) => {
+app.post("/api/gemini", async (req, res) => {
   const { prompt } = req.query;
   //console.log(prompt)
   return res.json({
